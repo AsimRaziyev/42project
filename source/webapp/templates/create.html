@@ -7,21 +7,43 @@
 </head>
 <body>
 
-<h1>Create Article</h1>
+<h2>Сalculator</h2>
 
 <form action="" method="post">
     {% csrf_token %}
 
-    <label>Title:</label><br/>
-    <input type="text" name="title"/><br/>
-      <label>Text:</label><br/>
-    <textarea name="content"></textarea><br/>
-    <label>Author:</label><br/>
-    <input type="text" name="author"/><br/>
+    <label>First Number:</label><br/>
+    <input type="text" name="first_number"/><br/>
+    <label>Second Number:</label><br/>
+    <input type="text" name="second_number"/><br/>
     <br/>
-    <input type="submit" value="Send"/>
+    <label>
+        <input type="checkbox" name="add" value="add">
+        <label>add</label>
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" name="subtract" value="subtract">
+        <label>subtract</label>
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" name="multiply" value="multiply">
+        <label>multiply</label>
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" name="divide" value="divide">
+        <label>divide</label>
+    </label>
+    <br/>
+    <br/>
+    <input type="submit" value="Calculate"/>
 </form>
 
+<h1>Result: {{ first_number }} {{ sign }} {{ second_number }} {{ equals }} {{ result }}</h1>
 </body>
 </html>
+
+
 
